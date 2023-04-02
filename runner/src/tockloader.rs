@@ -58,7 +58,7 @@ pub fn deploy(cli: &Cli, platform: String, tab_path: PathBuf) -> Child {
     }
 
     // Invoke tockloader uninstall to remove the process binary, if present.
-    let mut uninstall = Command::new("tockloader");
+    let mut uninstall = Command::new("/Users/radueduard39/Library/Python/3.10/bin/tockloader");
     uninstall.arg("uninstall");
     uninstall.args(flags);
     if cli.verbose {
@@ -75,7 +75,7 @@ pub fn deploy(cli: &Cli, platform: String, tab_path: PathBuf) -> Child {
     }
 
     // Invoke tockloader install to deploy the new process binary.
-    let mut install = Command::new("tockloader");
+    let mut install = Command::new("/Users/radueduard39/Library/Python/3.10/bin/tockloader");
     install.arg("install");
     install.args(flags);
     install.arg(tab_path);
@@ -94,7 +94,7 @@ pub fn deploy(cli: &Cli, platform: String, tab_path: PathBuf) -> Child {
     );
 
     // Invoke tockloader listen to receive messages from the Tock system.
-    let mut listen = Command::new("tockloader");
+    let mut listen = Command::new("/Users/radueduard39/Library/Python/3.10/bin/tockloader");
     listen.arg("listen");
     listen.args(flags);
     listen.stdout(Stdio::piped());
